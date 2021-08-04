@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float forwardForce = 2000f;
     public float sidewaysForce = 500f;
 
+    private int score = 0;
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -32,6 +34,16 @@ public class PlayerController : MonoBehaviour
         if ( Input.GetKey("s") )
         {
             rb.AddForce(0, 0, -forwardForce * Time.deltaTime);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Pickup")
+        {
+            score += 1;
+            Debug.Log("Score: " + score );
+            Destroy(other.gameObject);
         }
     }
 }
