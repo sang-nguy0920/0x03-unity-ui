@@ -6,9 +6,20 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public Material trapMat;
+    public Material goalMat;
+    public Toggle colorblindMode;
+
     public void PlayMaze()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        SceneManager.LoadScene("maze");
+        
+    }
+
+    public void QuitMaze()
+    {
+        Debug.Log("Quit Game");
     }
 
 }

@@ -83,6 +83,11 @@ public class PlayerController : MonoBehaviour
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        if (Input.GetKey("escape"))
+        {
+            SceneManager.LoadScene("menu");
+        }
+
     }
 
     void SetScoreText()
@@ -98,7 +103,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator LoadScene(float seconds)
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("maze");
         score = 0;
         health = 5;
     }
